@@ -12,7 +12,7 @@ import math
 from typing import Optional, Callable
 from einops import rearrange, repeat
 from functools import partial
-
+from .Ours_operator import Quant_conv, Quant_linear, Quant_out_linear, Act_Quant, oneRK_U as Weight_Quant, DDA_Quant
 NEG_INF = -1000000
 
 

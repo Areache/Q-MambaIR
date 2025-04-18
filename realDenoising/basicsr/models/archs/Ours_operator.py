@@ -6,7 +6,7 @@ import math
 from enum import Enum
 import torch.nn.functional as F
 # from .noneed.hadamard_utils import get_had_fn, get_qhad_fn
-from .QuantSR_operator import Hadamard
+# from .QuantSR_operator import Hadamard
 from analysis.plt import plot_tensor_histogram, plot_tensor_3d, plot_tensor_HW
 
 # from quantize.quantizer import UniformAffineQuantizer
