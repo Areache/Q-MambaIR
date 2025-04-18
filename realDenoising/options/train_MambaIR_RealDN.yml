@@ -63,7 +63,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ~
+  pretrain_network_g: /leonardo_work/IscrB_FM-EEG24/ychen004/datasets/training/pretrained_models/realDN.pth
   strict_load_g: true
   resume_state: ~
 
