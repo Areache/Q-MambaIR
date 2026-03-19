@@ -1,0 +1,30 @@
+{
+  "description": "Example hybrid blocks configuration for Quamba2. This file maps layer name patterns to their quantization bits.",
+  "comment": "Layer names matching the key will use the specified quantization bits. You can specify both w_bits and a_bits, or just a single integer for both.",
+  
+  "layers.0": {
+    "w_bits": 4,
+    "a_bits": 8
+  },
+  "layers.1": {
+    "w_bits": 4,
+    "a_bits": 8
+  },
+  "layers.2": {
+    "w_bits": 4,
+    "a_bits": 16
+  },
+  "layers.3": {
+    "w_bits": 4,
+    "a_bits": 16
+  },
+  "out_proj": {
+    "w_bits": 4,
+    "a_bits": 16
+  },
+  "in_proj": {
+    "w_bits": 4,
+    "a_bits": 8
+  }
+}
+
