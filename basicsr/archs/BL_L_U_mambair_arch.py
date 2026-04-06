@@ -10,10 +10,10 @@ from basicsr.utils.registry import ARCH_REGISTRY
 from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 from mamba_ssm.ops.selective_scan_interface import selective_scan_fn, selective_scan_ref
 from einops import rearrange, repeat
-from analysis.plt import plot_tensor_histogram, plot_tensor_3d, plot_tensor_HW
+# from analysis.plt import plot_tensor_histogram, plot_tensor_3d, plot_tensor_HW
 # from .lsq_zz_operator import Weight_Quant, Act_Quant,  Quant_linear
 from .BL_L_U_operator import Quant_conv, Quant_linear, Quant_out_linear, Act_Quant, oneRK_U as Weight_Quant, DDA_Quant
-from analysis.feature_map import draw_feature_map
+# from analysis.feature_map import draw_feature_map
 NEG_INF = -1000000
 
 def quant_proj_mat_mul(x, weight, act_q, weight_q):
