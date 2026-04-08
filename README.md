@@ -113,7 +113,7 @@ If you find this work useful, please cite:
 
 ## Acknowledgements
 
-This codebase builds on [MambaIR](https://github.com/csguoh/MambaIR) and [BasicSR](https://github.com/XPixelGroup/BasicSR). We thank their authors for releasing the code.
+This codebase builds on [MambaIR](https://github.com/csguoh/MambaIR) and [QuantSR](https://github.com/htqin/QuantSR). We thank their authors for releasing the code.
 
 ## License
 
