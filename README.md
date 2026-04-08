@@ -3,6 +3,10 @@
 > **Q-MambaIR: Accurate Quantized Mamba for Efficient Image Restoration**
 > [arXiv 2503.21970](https://arxiv.org/abs/2503.21970)
 
+<p align="center">
+  <img src="figs/teaser.png" width="100%">
+</p>
+
 ## Overview
 
 Q-MambaIR proposes two complementary techniques for quantizing Mamba-based image restoration networks:
