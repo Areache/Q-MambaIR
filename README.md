@@ -7,7 +7,7 @@
 
 Q-MambaIR proposes two complementary techniques for quantizing Mamba-based image restoration networks:
 
-- **DLS (Dynamic-balancing Learnable Scalar)** — a per-layer learnable scalar that dynamically adjusts the quantization mapping range to mitigate errors caused by extreme activation values.
+- **DLS (Dynamic-balancing Learnable Scalar)** — an input-adaptive learnable scalar that dynamically adjusts the quantization mapping range to mitigate errors caused by extreme activation values.
 - **RFA (Range-floating Flexible Allocator)** — an adaptive thresholding strategy for weight quantization that preserves fine image details while maintaining the model's feature extraction capacity.
 
 Together, DLS and RFA enable accurate 4-bit (and lower) quantization of MambaIR backbones for image super-resolution and denoising tasks, achieving competitive PSNR/SSIM with significantly reduced model bitwidth.
@@ -21,13 +21,6 @@ pip install -e .
 ```
 
 Key dependencies: `torch==2.0.1`, `mamba-ssm==1.2.0.post1`, `einops`, `timm`.
-
-For the fast Hadamard transform CUDA extension:
-
-```bash
-cd fast_hadamard_transform
-pip install -e .
-```
 
 ## Data Preparation
 
@@ -97,13 +90,10 @@ Q-MambaIR/
 │   ├── data/           # Dataset loaders
 │   ├── losses/         # Loss functions
 │   ├── models/         # Training/validation loop
-│   ├── quantize/       # Quantization utilities (DLS, RFA, quantizer)
 │   ├── train.py        # Training entry point
 │   └── test.py         # Testing entry point
 ├── options/
-│   ├── train/Ours/     # Q-MambaIR training configs
-│   └── test/           # Testing configs
-├── fast_hadamard_transform/   # CUDA Hadamard transform extension
+│   └── train/Ours/     # Q-MambaIR training configs
 ├── environment.yml
 └── requirements.txt
 ```
@@ -115,7 +105,7 @@ If you find this work useful, please cite:
 ```bibtex
 @article{qmambair2025,
   title   = {Q-MambaIR: Accurate Quantized Mamba for Efficient Image Restoration},
-  author  = {YOUR AUTHORS},
+  author  = {Yujie Chen and Haotong Qin and Zhang Zhang and Michele Magno and Luca Benini and Yawei Li},
   journal = {arXiv preprint arXiv:2503.21970},
   year    = {2025}
 }

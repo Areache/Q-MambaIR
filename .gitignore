@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# PyTorch
+*.pth
+*.pt
+
+# Experiments
+experiments/
+results/
+tb_logger/
+
+# Data
+datasets/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
