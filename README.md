@@ -51,7 +51,7 @@ Organize them as:
 
 | Model | Task | Bitwidth | Download |
 |-------|------|----------|----------|
-| Q-MambaIR-Light-x4 (4-bit) | SR ×4 | W4A4 | (coming soon) |
+| Q-MambaIR-Light-x4 (4-bit) | SR ×4 | W4A4 | [Google Drive](https://drive.google.com/file/d/1wz6v4CCOmCjE7Bi-s2LudB7Rtgiz58SW/view?usp=sharing) |
 
 Place downloaded `.pth` files in `/path/to/pretrained_models/` and update `path.pretrain_network_g` in the corresponding YAML.
 
@@ -78,7 +78,7 @@ Edit the `#SBATCH` headers in the script to match your cluster's partition, QoS,
 ## Testing
 
 ```bash
-python basicsr/test.py -opt options/test/<config>.yml
+python basicsr/test.py -opt options/test/LightSR/ours/test_MambaIR_lightSR_x4_ours_4b.yml
 ```
 
 ## Project Structure
@@ -93,7 +93,8 @@ Q-MambaIR/
 │   ├── train.py        # Training entry point
 │   └── test.py         # Testing entry point
 ├── options/
-│   └── train/Ours/     # Q-MambaIR training configs
+│   ├── train/Ours/     # Q-MambaIR training configs
+│   └── test/LightSR/   # Q-MambaIR testing configs
 ├── environment.yml
 └── requirements.txt
 ```

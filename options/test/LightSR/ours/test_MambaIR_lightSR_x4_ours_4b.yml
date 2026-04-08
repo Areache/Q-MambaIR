@@ -1,0 +1,88 @@
+# general settings
+name: test_QMambaIR_lightSR_x4_4b
+model_type: MambaIRModel
+scale: 4
+num_gpu: 1
+manual_seed: 10
+
+datasets:
+  test_1:
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: /path/to/datasets/SR/Set5/HR
+    dataroot_lq: /path/to/datasets/SR/Set5/LR_bicubic/X4
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_2:
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: /path/to/datasets/SR/Set14/HR
+    dataroot_lq: /path/to/datasets/SR/Set14/LR_bicubic/X4
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_3:
+    name: B100
+    type: PairedImageDataset
+    dataroot_gt: /path/to/datasets/SR/B100/HR
+    dataroot_lq: /path/to/datasets/SR/B100/LR_bicubic/X4
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_4:
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt: /path/to/datasets/SR/Urban100/HR
+    dataroot_lq: /path/to/datasets/SR/Urban100/LR_bicubic/X4
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_5:
+    name: Manga109
+    type: PairedImageDataset
+    dataroot_gt: /path/to/datasets/SR/Manga109/HR
+    dataroot_lq: /path/to/datasets/SR/Manga109/LR_bicubic/X4
+    filename_tmpl: '{}_LRBI_x4'
+    io_backend:
+      type: disk
+
+# network structures
+network_g:
+  type: QuantBL_L_MambaIR
+  upscale: 4
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  d_state: 10
+  depths: [6, 6, 6, 6]
+  embed_dim: 60
+  mlp_ratio: 1.2
+  upsampler: 'pixelshuffledirect'
+  resi_connection: '1conv'
+  k_bits: 4
+
+# path
+path:
+  pretrain_network_g: /path/to/pretrained_models/net_g_latest.pth
+  strict_load_g: false
+
+# validation settings
+val:
+  save_img: true
+  pbar: true
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: true
